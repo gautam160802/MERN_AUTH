@@ -1,6 +1,6 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import userModel from "../models/userModel";
+import userModel from "../models/userModel.js";
 
 export const register = async (req, res) => {
   const { name, email, password } = req.body;
@@ -34,7 +34,7 @@ export const register = async (req, res) => {
 
     return res.json({ success: true });
   } catch (error) {
-    res.josn({ success: false, message: error.message });
+    res.json({ success: false, message: error.message });
   }
 };
 
